@@ -1,0 +1,12 @@
+LinkGroup atlas-link-group
+/atlas
+/atlas/Role=production
+/atlas/soft-valid/Role=production 
+/atlas/soft-valid
+/atlas/de
+
+LinkGroup ops-link-group
+/ops
+/ops/soft-valid
+/ops/NGI
+/ops/NGI/Germany

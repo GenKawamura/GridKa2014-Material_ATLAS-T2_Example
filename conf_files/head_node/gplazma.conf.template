@@ -1,0 +1,6 @@
+auth optional voms
+auth optional x509
+map optional vorolemap
+map sufficient authzdb
+map optional gridmap
+session requisite authzdb

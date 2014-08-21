@@ -1,0 +1,61 @@
+# This is the main configuration file of dCache head node.
+#
+# This file used to be called by dCache v2.2.20 head system. This 
+# confituraion is used for an officiall ATLAS T2 site in Germany.
+#
+#
+#
+
+dcache.layout=${host.name}
+dcache.namespace=chimera
+dcache.user=root
+dcache.path.billing=/var/log
+chimera.db.user = postgres
+chimera.db.url = jdbc:postgresql://localhost/chimera?prepareThreshold=3
+
+# The following is taken from the old dCacheSetup file.
+# Some configuration parameters may no longer apply.
+
+broker.host=${host.name}
+Dlog4j.debug=true               -Dorg.dcache.dcap.port=0               -Dorg.dcache.net.tcp.portrange=24000:24100               -Dlog4j.configuration=file:${dcache.home}/config/log4j.properties
+
+metaDataRepository=org.dcache.pool.repository.meta.db.BerkeleyDBMetaDataRepository
+useGPlazmaAuthorizationModule=true
+useGPlazmaAuthorizationCell=false
+gsidcapIoQueue=queue-gsidcap
+dcapIoQueue=queue-dcap
+#dcapMaxLogin=5000
+dcapMaxLogin=2500
+performanceMarkerPeriod=10
+gsiftpMaxStreamsPerClient=20
+gsiftpIoQueue=queue-gridftp
+xrootdIoQueue=queue-xroot
+srmSpaceManagerEnabled=yes
+srmImplicitSpaceManagerEnabled=true
+ftpPort=${portBase}126
+kerberosFtpPort=${portBase}127
+cacheInfo=pnfs
+DefaultRetentionPolicy=REPLICA
+DefaultAccessLatency=ONLINE
+SpaceManagerReserveSpaceForNonSRMTransfers=true
+SpaceManagerLinkGroupAuthorizationFileName=/etc/dcache/LinkGroupAuthorization.conf
+billingToDb=no
+aclEnabled=false
+poolIoQueue=queue-gridftp,queue-dcap,queue-gsidcap,queue-xroot
+dcache.java.memory.heap=2048m
+dcache.java.memory.direct=2048m
+
+## Chimera tuning
+#pnfsNumberOfThreads=12
+
+
+## Webdav configuration
+webdavAnonymousAccess=NONE
+webdavRootPath=/
+webdavProtocol=https-jglobus
+
+
+# For new Info-Provider
+#info-provider.site-unique-id=ATLAS-DCACHE-DE-T2
+#info-provider.se-unique-id=ATLAS@dcache.german-t2.de
+#info-provider.se-name=atlas@dcache.german-t2.de

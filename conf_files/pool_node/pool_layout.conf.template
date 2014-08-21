@@ -1,0 +1,22 @@
+# dcache pool_layout.conf example for ATLAS T2
+#
+# Source: /etc/dcache/layouts/$(hostname).conf
+# Date: Wed Aug 20 2014
+#
+# DISCLAIMER: This configuration file is used by dCache v2.2.20 Tier-2 site.
+# This pool node has not authenticated doors such as dcap and xroot.
+#
+
+[dcap-${host.name}Domain]
+[dcap-${host.name}Domain/dcap]
+
+[xrootd-${host.name}Domain]
+[xrootd-${host.name}Domain/xrootd]
+
+#[gsidcap-${host.name}Domain]
+#[gsidcap-${host.name}Domain/gsidcap]
+
+#[gridftp-${host.name}Domain]
+#dcache.user=root
+#[gridftp-${host.name}Domain/gridftp]
+

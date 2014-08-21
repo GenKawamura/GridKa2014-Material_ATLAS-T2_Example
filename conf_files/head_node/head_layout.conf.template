@@ -1,0 +1,67 @@
+# dCache head_layout.conf example for ATLAS T2
+#
+# Source: /etc/dcache/layouts/$(hostname).conf
+# Date: Thu Aug 21 11:16 CEST 2014
+#
+# DISCLAIMER: Please make sure what this configuraiton is an example.
+# According to your dCache system, this file need to be changed. Typical
+# services for head node of dCache v2.2.20 are written here. nfsv41 must not be
+# activated for official T2 production system, because of an issue of information provider
+#
+
+[dCacheDomain]
+[dCacheDomain/poolmanager]
+[dCacheDomain/broadcast]
+[dCacheDomain/loginbroker]
+[dCacheDomain/topo]
+
+
+[adminDoorDomain]
+[adminDoorDomain/admin]
+
+
+[httpdDomain]
+[httpdDomain/httpd]
+[httpdDomain/billing]
+[httpdDomain/srm-loginbroker]
+
+
+[utilityDomain]
+[utilityDomain/gsi-pam]
+[utilityDomain/pinmanager]
+
+
+[gPlazma-se-goegridDomain]
+[gPlazma-se-goegridDomain/gplazma]
+
+
+[infoDomain]
+[infoDomain/info]
+
+[srm-${host.name}Domain]
+[srm-${host.name}Domain/srm]
+[srm-${host.name}Domain/spacemanager]
+[srm-${host.name}Domain/transfermanagers]
+
+[dirDomain]
+[dirDomain/dir]
+
+[namespaceDomain]
+[namespaceDomain/pnfsmanager]
+[namespaceDomain/cleaner]
+[namespaceDomain/acl]
+#[namespaceDomain/nfsv41]
+
+#[xrootd-${host.name}Domain]
+#[xrootd-${host.name}Domain/xrootd]
+
+[webdav-${host.name}Domain]
+dcache.user=root
+[webdav-${host.name}Domain/webdav]
+
+[dcap-${host.name}Domain]
+[dcap-${host.name}Domain/dcap]
+
+[gridftp-${host.name}Domain]
+dcache.user=root
+[gridftp-${host.name}Domain/gridftp]
